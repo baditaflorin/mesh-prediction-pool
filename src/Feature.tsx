@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Leaderboard,
+  MeshNameInput,
   useEventLog,
   useNamedPeer,
   type MeshConfig,
@@ -128,13 +129,7 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
     <div className="pp-screen">
       <h1>prediction pool</h1>
       <div className="pp-balance">your balance: {myBalance}</div>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="your name"
-        aria-label="your name"
-        maxLength={48}
-      />
+      <MeshNameInput value={name} onChange={setName} placeholder="your name" maxLength={48} />
       <div className="pp-create">
         <input
           value={question}
