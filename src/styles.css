@@ -49,3 +49,113 @@ body,
   opacity: 0.6;
   font-variant-numeric: tabular-nums;
 }
+
+.pp-screen {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pp-screen h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--mesh-accent);
+}
+
+.pp-screen input,
+.pp-screen button {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+}
+
+.pp-screen button {
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+
+.pp-screen button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pp-balance {
+  align-self: flex-start;
+  padding: 0.35rem 0.7rem;
+  border-radius: 1rem;
+  background: rgba(136, 221, 136, 0.15);
+  font-weight: 600;
+}
+
+.pp-create {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pp-create input {
+  flex: 1;
+}
+
+.pp-markets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pp-market {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pp-q {
+  font-weight: 600;
+}
+
+.pp-author {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.pp-totals {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
+.pp-betrow,
+.pp-resolve {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pp-betrow input[type="number"] {
+  width: 7rem;
+}
+
+.pp-resolved {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.pp-chip {
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  background: var(--mesh-accent);
+  color: #052;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
