@@ -54,6 +54,19 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
     };
   }, [resolutions, payouts]);
 
+  // Test-only handle: expose the live Yjs room + this peer's id so an e2e can
+  // read the shared markets/bets/resolutions/payouts CRDT state and prove the
+  // pool-split math agrees across peers. A plain reference; no behaviour change.
+  useEffect(() => {
+    (window as unknown as { __ppRoom?: { doc: typeof room.doc; peerId: string } }).__ppRoom = {
+      doc: room.doc,
+      peerId: room.peerId,
+    };
+    return () => {
+      delete (window as unknown as { __ppRoom?: unknown }).__ppRoom;
+    };
+  }, [room]);
+
   // Settle any newly-resolved market that lacks payouts.
   useEffect(() => {
     const all = bets.events;
