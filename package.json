@@ -30,7 +30,8 @@
     "test:e2e:install": "playwright install chromium",
     "screenshot": "bash ../mesh-common/scripts/screenshot-app.sh",
     "demo": "bash ../mesh-common/scripts/record-demo.sh",
-    "audit:security": "bash ../mesh-common/scripts/audit-app-security.sh"
+    "audit:security": "bash ../mesh-common/scripts/audit-app-security.sh",
+    "test:leak": "MESH_RUN_LEAK_TEST=1 playwright test tests/e2e/memory-leak.spec.ts"
   },
   "dependencies": {
     "@baditaflorin/mesh-common": "file:../mesh-common",
